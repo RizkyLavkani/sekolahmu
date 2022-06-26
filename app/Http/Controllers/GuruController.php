@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-use GuzzleHttp\Client;
 
 class GuruController extends Controller{
 	public function getListDataGuru(){
@@ -14,7 +13,6 @@ class GuruController extends Controller{
 
         $result = $response->body();
         $dataGuru = json_decode($result);
-        // dd($dataGuru);
 
     	return view('daftarGuru',['dataGuru' => $dataGuru->data]);
 	}
@@ -51,6 +49,7 @@ class GuruController extends Controller{
 
         $result = $response->body();
         $dataGuru = json_decode($result);
+        // dd($dataGuru);
         
         return view('editDataGuru',['dataGuru' => $dataGuru]);
     }

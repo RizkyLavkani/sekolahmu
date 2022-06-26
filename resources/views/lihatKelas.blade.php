@@ -12,11 +12,11 @@
 		</tr>
 		@foreach($dataDaftarKelas as $dk)
 		<tr>
-            <td>{{ $dk->ID_Kelas }}</td>
-			<td>{{ $dk->Nama_Guru }}</td>
-			<td>{{ $dk->Nama_MatPel }}</td>
+            <td>{{ $dk->id_kelas }}</td>
+			<td>{{ $dk->nama_guru }}</td>
+			<td>{{ $dk->nama_matpel }}</td>
 			<td>
-				<a href="/sekolah/lihat_kelas/detailKelas/{{ $dk->ID_Kelas }}">Detail</a>
+				<a href="/sekolah/lihat_kelas/detailKelas/{{ $dk->id_kelas }}">Detail</a>
 			</td>
 		</tr>
 		@endforeach

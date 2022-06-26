@@ -5,15 +5,13 @@
 @section('isi')
 	<table border="1">
 		<tr>
-			<!-- <th>ID Kelas</th> -->
             <th>NIS</th>
 			<th>Nama Siswa</th>
 		</tr>
 		@foreach($dataDetailKelas as $dk)
 		<tr>
-            <!-- <td>{{ $dk->ID_Kelas }}</td> -->
-			<td>{{ $dk->NIS }}</td>
-			<td>{{ $dk->Nama_Siswa }}</td>
+			<td>{{ $dk->nis }}</td>
+			<td>{{ $dk->nama_siswa }}</td>
 		</tr>
 		@endforeach
 	</table>

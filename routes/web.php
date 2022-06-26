@@ -12,24 +12,6 @@ Route::get('/sekolah/tambah_kelas', 'App\Http\Controllers\KelasController@getLis
 Route::get('/sekolah/daftar_kelas', 'App\Http\Controllers\DaftarKelasController@getListDaftarKelas');
 Route::get('/sekolah/lihat_kelas', 'App\Http\Controllers\LihatKelasController@getListAnggotaKelas');
 
-Route::group(array('prefix' => 'api/v1'), function()
-{
-    Route::resource('pages', 'PagesController', array('only' => array('index', 'store', 'show', 'update', 'destroy')));
-    Route::resource('/users', 'GuruController@getListDataGuru');
-});
-
-Route::group(array('prefix' => 'api/v1'), function()
-{
-    Route::resource('pages', 'PagesController', array('only' => array('index', 'store', 'show', 'update', 'destroy')));
-    Route::resource('/users', 'SiswaController@getListDataSiswa');
-});
-
-Route::group(array('prefix' => 'api/v1'), function()
-{
-    Route::resource('pages', 'PagesController', array('only' => array('index', 'store', 'show', 'update', 'destroy')));
-    Route::resource('/users', 'KelasController@getListDataKelas');
-});
-
 // Add Data Guru
 Route::get('/sekolah/daftar_guru/tambahGuru', 'App\Http\Controllers\GuruController@btnAddGuru');
 Route::post('/sekolah/daftar_guru/tambahGuru/insertDataGuru', 'App\Http\Controllers\GuruController@insertDataGuru');
@@ -40,7 +22,6 @@ Route::post('/sekolah/daftar_guru/editDataGuru/updateDataGuru','App\Http\Control
 
 // Delete Data Guru
 // Route::get('/sekolah/daftar_guru/deleteDataGuru/{NIP}','App\Http\Controllers\GuruController@deleteDataGuru');
-
 
 // Add Data Murid
 Route::get('/sekolah/daftar_siswa/tambahSiswa', 'App\Http\Controllers\SiswaController@btnAddSiswa');

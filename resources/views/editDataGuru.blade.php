@@ -36,8 +36,8 @@
                 <td>:</td>
                 <td>
                     <select name="gender" class="form-control" required value="{{ $g->gender }}">
-                        <option value="L" {{ $g->gender == 'L' ? 'selected':'' }}>Laki-Laki</option>
-                        <option value="P" {{ $g->gender == 'P' ? 'selected':'' }}>Perempuan</option>
+                        <option value="L" {{ $g->gender == 'L ' ? 'selected':'' }}>Laki-Laki</option>
+                        <option value="P" {{ $g->gender == 'P ' ? 'selected':'' }}>Perempuan</option>
                     </select>
                 </td>
             </tr>

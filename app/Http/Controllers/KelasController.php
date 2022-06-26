@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
-use GuzzleHttp\Client;
 
 class KelasController extends Controller{
 	public function getListDataKelas(){
@@ -19,8 +18,13 @@ class KelasController extends Controller{
 	}
 
     public function btnAddKelas(){
-        $countId = DB::table('tabel_kelas')->max('id_kelas');;
-    	return view('tambahKelas',['id_kelas' => $countId + 1]);
+        // $countId = DB::table('tabel_kelas')->max('id_kelas');
+        $response = Http::get('http://127.0.0.1:8080/maxIdKelas');
+
+        $result = $response->body();
+        $maxId = json_decode($result);
+
+    	return view('tambahKelas',['id_kelas' => $maxId -> data]);
 	}
 
     public function insertDataKelas(Request $request){
